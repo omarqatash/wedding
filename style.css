@@ -1,0 +1,309 @@
+```css
+@import url('https://fonts.googleapis.com/css2?family=Playpen+Sans+Arabic:wght@100..800&display=swap');
+
+/* ==========================
+   Global Styles
+========================== */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Playpen Sans Arabic", sans-serif !important;
+}
+
+html {
+  direction: rtl;
+}
+
+body {
+  direction: rtl;
+  text-align: center;
+  background-image: url("./assets/wedding44.avif");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  font-family: "Playpen Sans Arabic", cursive !important;
+
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+
+  margin: 0;
+  color: #fff;
+}
+
+/* ==========================
+   General Text
+========================== */
+
+.custom-p {
+  font-size: 1.3rem;
+  line-height: 1.9;
+  font-weight: 400;
+}
+
+/* ==========================
+   Layout
+========================== */
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 20px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wedding {
+  position: relative;
+  width: 100%;
+  max-width: 620px;
+
+  padding: 50px 15px 30px;
+}
+
+.wedding::before,
+.wedding::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+}
+
+.wedding::before {
+  background-image: url("./assets/blackDotted4.png");
+  opacity: 0;
+}
+
+.wedding::after {
+  background: rgba(0, 0, 0, 0.35);
+}
+
+/* ==========================
+   Title
+========================== */
+
+.wedding__title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: 30px;
+  letter-spacing: 1px;
+}
+
+.wedding__title::before,
+.wedding__title::after {
+  content: "";
+  width: 32px;
+  height: 32px;
+  display: inline-block;
+  position: relative;
+  top: 4px;
+}
+
+.wedding__title::before {
+  background: url("./assets/bird-right.png") center/contain no-repeat;
+  margin-left: 8px;
+}
+
+.wedding__title::after {
+  background: url("./assets/bird-left.png") center/contain no-repeat;
+  margin-right: 8px;
+}
+
+/* ==========================
+   Heart
+========================== */
+
+.heart {
+  margin-bottom: 30px;
+}
+
+/* ==========================
+   Place & Button
+========================== */
+
+.wedding__place {
+  margin-bottom: 18px;
+}
+
+.wedding__location {
+  margin-bottom: 40px;
+}
+
+.wedding__location button {
+  background: rgba(255, 255, 255, 0.08);
+  color: white;
+
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 8px;
+
+  padding: 10px 24px;
+  font-size: 1rem;
+
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.wedding__location button:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.wedding__location button:focus {
+  outline: none;
+}
+
+/* ==========================
+   Countdown
+========================== */
+
+.wedding__countdown {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  gap: 20px;
+
+  margin-bottom: 40px;
+}
+
+.countdown {
+  min-width: 90px;
+}
+
+.countdown p {
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+.countdown span {
+  display: block;
+  margin-top: 6px;
+  font-size: 1rem;
+}
+
+/* ==========================
+   Subtitle
+========================== */
+
+.wedding__subtitle {
+  margin-bottom: 45px;
+  font-size: 1.2rem;
+}
+
+/* ==========================
+   Quote
+========================== */
+
+.wedding__quote {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  margin-inline: -10px;
+  padding: 20px;
+    background: rgb(255 255 255 / 18%);
+
+  border-radius: 12px;
+}
+
+.quote__img img {
+  width: 22px;
+  height: 22px;
+  margin-bottom: 10px;
+}
+
+.wedding__quote blockquote {
+  width: 85%;
+  font-size: 1.05rem;
+  line-height: 2;
+  font-style: normal;
+}
+
+/* ==========================
+   Intro Overlay
+========================== */
+
+.overlay-heart {
+  position: fixed;
+  inset: 0;
+
+  width: 100vw;
+  height: 100vh;
+
+  background: #040204;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  pointer-events: none;
+
+  animation: hide 2s forwards;
+}
+
+.butterfly {
+  width: 400px;
+  height: 400px;
+
+  background: url("./assets/hearts-butterfly.gif")
+    center center / contain no-repeat;
+}
+
+/* ==========================
+   Animations
+========================== */
+
+@keyframes hide {
+  0%,
+  70% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+.zoomOut {
+  animation: zoomOut 15s;
+}
+
+@keyframes zoomOut {
+  30% {
+    opacity: 0.8;
+  }
+
+  100% {
+    transform: scale(1.7);
+    opacity: 0;
+  }
+}
+
+/* ==========================
+   Responsive
+========================== */
+
+@media (max-width: 768px) {
+  .wedding__title {
+    font-size: 2.2rem;
+  }
+
+  .countdown p {
+    font-size: 2.3rem;
+  }
+
+  .wedding__quote blockquote {
+    width: 95%;
+  }
+
+  .butterfly {
+    width: 280px;
+    height: 280px;
+  }
+}
+```
